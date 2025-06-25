@@ -1,0 +1,269 @@
+:root {
+    --primary: #2c3e50;
+    --primary-light: #3d566e;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --light-gray: #f5f5f5;
+    --success: #2ecc71;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f9f9f9;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background-color: #a4e0f3;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 
+    -1px -1px 0 rgba(78, 78, 78, 0.2), /* Sombra izquierda superior con 50% de opacidad */
+     1px -1px 0 rgba(78, 78, 78, 0.2), /* Sombra derecha superior con 50% de opacidad */
+    -1px  1px 0 rgba(78, 78, 78, 0.2), /* Sombra izquierda inferior con 50% de opacidad */
+     1px  1px 0 rgba(78, 78, 78, 0.2);
+}
+
+.highlight img {
+    position: absolute;
+    color: var(--accent);
+    width: 15%;
+   bottom: 32%;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #01447a;
+    text-shadow: 
+    -1px -1px 0 rgb(255, 255, 255, 0.1), /* Sombra izquierda superior con 50% de opacidad */
+     1px -1px 0 rgb(255, 255, 255, 0.1), /* Sombra derecha superior con 50% de opacidad */
+    -1px  1px 0 rgb(255, 255, 255, 0.1), /* Sombra izquierda inferior con 50% de opacidad */
+     1px  1px 0 rgb(255, 255, 255, 0.1);    
+    ;
+    font-weight: bold;
+}
+
+/* Selector de tipo de desarrollo */
+.dev-selector {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dev-selector h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.dev-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.dev-option {
+    background: white;
+    border: 2px solid var(--secondary);
+    color: var(--dark);
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev-option small {
+    font-size: 0.8rem;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.dev-option.active {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.dev-option:hover:not(.active) {
+    background-color: var(--light);
+}
+
+/* Sección de planes */
+.plans-section {
+    margin-bottom: 50px;
+}
+
+.plans-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary);
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.plans-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.plan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.plan-group {
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.plan-group.active {
+    display: flex;
+}
+
+/* Tarjetas de planes */
+.plan-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border-top: 4px solid var(--secondary);
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card.popular {
+    border-top-color: var(--accent);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--accent);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--gray);
+}
+
+.plan-card ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.plan-card ul li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.plan-card ul li::before {
+    content: '✓';
+    color: var(--success);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.cta-button {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: none;
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dev-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dev-option {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .plan-card {
+        max-width: 100%;
+    }
+}

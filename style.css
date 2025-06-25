@@ -1,0 +1,659 @@
+/* Importación de fuente (ejemplo, puedes usar la que quieras de Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* --- Reset Básico y Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4df;
+    overflow-x: hidden; /* Evita el scroll horizontal en toda la página */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1em;
+    color: #03213A; /* Color principal de Vowk Studio */
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 100vw; /* Asegura que la sección no se desborde */
+}
+
+/* --- Header (Solo para el logo) --- */
+.main-header {
+    background-color: #ffffff; /* Azul oscuro */
+    color: #fff;
+    padding: 0;
+   /* box-shadow: 0 2px 5px rgba(0,0,0,0.2);*/
+    width: 100%;
+    position: relative; /* Se mantiene arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    height: 220px;
+}
+
+.header-content-logo {
+    display: flex;
+    justify-content: start; /* Centra el logo horizontalmente */
+    max-width: 1200px; /* Ancho máximo para el contenido del header */
+    margin-top: -20px;
+}
+
+.logo img {
+    max-height: 250px; /* Tamaño del logo */
+    width: auto;
+}
+
+
+/* --- SECCIÓN NUEVA: Navegación y Búsqueda (fuera del header) --- */
+.nav-search-section {
+    background-color: #ECF8FC; /* Un fondo más claro para diferenciarlo */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    width: 100%;
+    display: flex; /* Para alinear el menú y el buscador */
+    justify-content: space-between; /* El menú a la izquierda, el buscador a la derecha */
+    align-items: center; /* Alineación vertical al mismo nivel */
+    max-width: 1200px; /* Ancho máximo para el contenido del nav/search */
+    margin: 0 auto; /* Centra esta sección en la página */
+    border-radius: 0 0 8px 8px; /* Pequeño redondeo en la parte inferior */
+    margin-bottom: 20px; /* Espacio debajo de esta sección */
+    top: 0;
+    z-index: 1000; /* Ligeramente por debajo del header sticky */
+    position: sticky;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav ul li a {
+    color: #03213A; /* Color oscuro para el texto del menú */
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ADD8E6; /* Celeste claro */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(3, 33, 58, 0.1); /* Un poco de transparencia del azul principal */
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 10px;
+    outline: none;
+    background: transparent;
+    color: #03213A; /* Texto de input oscuro */
+    width: 150px;
+}
+
+.search-bar input::placeholder {
+    color: rgba(3, 33, 58, 0.7);
+}
+
+.search-bar button {
+    background-color: #ADD8E6; /* Celeste */
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #03213A;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #87CEEB;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    padding: 60px 20px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; /* Asegura que las imágenes en los bordes se recorten */
+    min-height: 600px; /* Altura mínima para que las imágenes tengan espacio */
+    max-width: 100vw;
+    margin: 0 auto 20px auto; /* Centra la sección y añade margen abajo */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 60%; /* Para dejar espacio a las imágenes */
+    z-index: 2; /* Para que el texto esté por encima de las imágenes */
+    text-align: center;
+    margin-left: 220px;
+}
+
+.hero-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+    color: #03213A;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+.hero-content .free-consulting {
+    font-weight: bold;
+    color: #ADD8E6; /* Celeste */
+    margin-top: 1em;
+}
+
+
+.hero-image-container-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 450px; /* Tamaño de la imagen */
+    height: 350px;
+    object-fit: cover; /* Recorta la imagen para que encaje sin distorsión */
+    pointer-events: none;
+    
+    
+}
+.hero-image-container-top img {
+    width: 300px;        /* La imagen ocupa el 100% del ancho de su CONTENEDOR */
+          /* La imagen ocupa el 100% de la altura de su CONTENEDOR */
+     /* ¡Aquí va object-fit! Para que la imagen llene el espacio y se recorte */
+    
+   
+}
+.hero-image-container-bottom {
+    position: absolute;
+    bottom: -50px;
+    right: -150px;
+    width: 450px; /* Tamaño de la imagen */
+    height: 350px;
+    object-fit: cover;
+}
+
+.hero-image-container-bottom img{
+    width: 300px;
+}
+
+/* --- Planes de Diseño Web --- */
+.plans-section {
+    text-align: center;
+    background-color: #03213A; /* Fondo azul oscuro */
+    color: #fff;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.plans-section h2 {
+    color: #fff;
+}
+
+.plan-selector {
+    background-color: #ADD8E6; /* Fondo azul claro para el selector */
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block; /* Para que el div ocupe solo su contenido */
+    margin-top: 20px;
+    min-width: 300px; /* Para que tenga un tamaño visible */
+    text-align: center;
+    color: #03213A;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* --- Planes de Promoción --- */
+.promotion-plans {
+    text-align: center;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.promotion-plans h2 {
+    color: #03213A;
+}
+
+.promotion-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Para que se ajusten en pantallas más pequeñas */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.promotion-cards .card {
+    background-color: #fff;
+    border: 2px solid #ADD8E6; /* Borde celeste */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    width: 300px; /* Ancho fijo para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promotion-cards .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.promotion-cards .card h3 {
+    color: #ADD8E6; /* Título celeste */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.promotion-cards .card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.promotion-cards .card a {
+    display: inline-block;
+    background-color: #ADD8E6;
+    color: #03213A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.promotion-cards .card a:hover {
+    background-color: #87CEEB;
+}
+
+/* --- Sección Nosotros --- */
+/* --- About Us Section --- */
+.about-us-section {
+    background-color: #ECF8FC; /* Fondo celeste muy claro */
+    position: relative; /* ¡CLAVE! Permite posicionar elementos 'absolute' dentro de ella */
+    padding: 60px 20px;
+    max-width: 100vw;
+    margin: 0 auto 20px auto;
+    
+    
+    display: flex;
+    flex-direction: column; /* Apilamos los elementos principales (imagen de fondo, título, contenido) */
+    align-items: center;    /* Centra horizontalmente los ítems flex */
+    justify-content: center; /* Centra verticalmente los ítems flex */
+    
+    overflow: hidden; /* Crucial para recortar la imagen que sobresale */
+    min-height: 500px; /* Asegura suficiente altura para el posicionamiento */
+}
+
+/* NUEVO: Estilos para el contenedor de la imagen de fondo del título */
+.about-us-title-background-image {
+    position: absolute; /* Sacamos la imagen del flujo normal para que no empuje el h2 */
+    top: 50px;             /* Ajusta esto para la posición vertical. Podrías usar, por ejemplo, 20px */
+    left: 50%;          /* Centra horizontalmente el punto de inicio de la imagen */
+    transform: translateX(-50%); /* Ajusta para que el centro de la imagen coincida con el centro de la sección */
+    
+    width: 800px; /* ¡Ajusta el ancho de tu imagen de fondo! */
+    height: 300px; /* ¡Ajusta la altura de tu imagen de fondo! */
+    
+    z-index: 1; /* ¡CLAVE! Estará debajo del título y del contenido principal */
+    pointer-events: none; /* Para que no bloquee los clics en el título/texto */
+    
+    /* Si quieres que la imagen se "salga" por arriba de la sección, usa un margen negativo */
+    margin-top: -80px; /* Ejemplo: Mueve la imagen 80px hacia arriba */
+
+    /* Añade estilos al contenedor si quieres, por ejemplo, bordes redondeados al div */
+    border-radius: 15px; 
+    
+}
+
+.about-us-title-background-image img {
+    width: 100%;        /* La imagen ocupa todo el ancho de su contenedor */
+    height: 100%;       /* La imagen ocupa toda la altura de su contenedor */
+    object-fit: cover;  /* La imagen se ajusta y recorta dentro de su div contenedor */
+    border-radius: 15px; /* Bordes redondeados para la imagen en sí */
+}
+
+
+.about-us-section h2 {
+    position: relative; /* ¡CLAVE! Necesita position para que z-index funcione */
+    margin-bottom: 40px; /* Deja espacio para el contenido de abajo */
+    display: inline-block; /* Para que el fondo/padding/ancho se ajuste al texto */
+    color: #03213A;
+    
+    /* ¡CLAVE! Z-index más alto que la imagen de fondo */
+    z-index: 2; /* Para que el texto del h2 esté por encima de la imagen de fondo */
+    
+    /* Si quieres que el texto del h2 se vea "dentro" de la imagen,
+       puedes ajustar el color del texto y añadir padding/margen para posicionarlo. */
+    padding: 10px 20px; /* Ejemplo de padding para el texto del título */
+    /* background-color: rgba(255,255,255,0.7); /* Opcional: un fondo semitransparente para el texto */
+    /* border-radius: 5px; /* Opcional: bordes redondeados para el fondo del texto */
+}
+
+.about-us-content {
+    /* El contenido del texto principal (párrafos) */
+    display: flex; /* Mantenemos flex para los elementos dentro del content */
+    flex-direction: column; /* Apila la imagen (si la vuelves a poner) y los párrafos */
+    align-items: center; /* Centra los elementos dentro de about-us-content */
+    gap: 30px; /* Espacio entre la imagen y los párrafos (si tuvieras imagen aquí) */
+
+    max-width: 900px; /* Ancho máximo para el texto */
+    margin: 0 auto; /* Centra el bloque de texto */
+    text-align: left; /* Mantén la alineación del texto como estaba */
+    
+    /* ¡CLAVE! Le damos un z-index ALTO para que el contenido principal esté por encima de la imagen de fondo del título */
+    z-index: 3; /* Asegura que el contenido principal también esté encima de la imagen de fondo */
+    position: relative; /* Necesario para que el z-index funcione */
+}
+
+/* ¡ELIMINA O COMENTA ESTO! La imagen ya no está directamente dentro de about-us-content */
+/*
+.about-us-content img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+*/
+
+.about-us-content p {
+    text-align: left; /* Mantenemos la alineación del texto para los párrafos */
+    font-size: 1.1em;
+    color: #444;
+}
+
+/* --- Media Queries para Responsividad (ajustar la imagen del título) --- */
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .about-us-section h2 {
+        margin-bottom: 20px;
+        font-size: 2em; /* Ajuste para móvil */
+    }
+
+    .about-us-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+        /* En móvil, si flex-direction es column, align-items: center ya centra el texto */
+    }
+
+    .about-us-content p {
+        text-align: center; /* Centra el texto en móvil si lo prefieres */
+    }
+
+    /* Ajustes para la imagen de fondo del título en móvil */
+    .about-us-title-background-image {
+        position: relative; /* En móvil, puede ser relativa para que ocupe espacio normal */
+        top: auto;
+        left: auto;
+        transform: none; /* Resetea las transformaciones */
+        width: 100%;     /* Ocupa el 100% del ancho disponible */
+        max-width: 350px; /* Un tamaño máximo razonable */
+        height: 150px;   /* Altura ajustada para móvil */
+        margin: 0 auto 20px auto; /* Centra y añade margen */
+        z-index: auto; /* Resetea el z-index */
+        pointer-events: auto; /* Permite interacciones si la haces estática */
+    }
+
+    .about-us-title-background-image img {
+        border-radius: 8px; /* Redondea los bordes en móvil */
+        box-shadow: none; /* Quita la sombra si no la quieres en móvil */
+    }
+}
+
+/* --- Sección Contacto --- */
+.contact-section {
+    text-align: center;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.contact-section h2 {
+    color: #03213A;
+}
+
+.social-icons {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons a {
+    font-size: 2.5em;
+    color: #03213A;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ADD8E6;
+    transform: translateY(-5px);
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ADD8E6;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.send-button, .whatsapp-button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+.send-button {
+    background-color: #03213A;
+    color: #fff;
+}
+
+.send-button:hover {
+    background-color: #1a3c5a;
+}
+
+.whatsapp-button {
+    background-color: #25D366; /* Verde de WhatsApp */
+    color: #fff;
+    display: flex; /* Para alinear el icono y el texto */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+}
+
+/* --- Sección Ubicación --- */
+.location-section {
+    text-align: center;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.location-section h2 {
+    color: #03213A;
+}
+
+.map-placeholder {
+    background-color: #e0e0e0;
+    height: 300px; /* Altura para el mapa */
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #03213A;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    /* Header */
+    .header-content-logo {
+        padding-bottom: 10px; /* Un poco de espacio debajo del logo */
+    }
+
+    /* Navegación y Búsqueda */
+    .nav-search-section {
+        flex-direction: column; /* Apila el menú y el buscador */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 15px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-images {
+        position: static; /* Las imágenes se vuelven parte del flujo normal */
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hero-image-top, .hero-image-bottom {
+        position: static;
+        width: 80%; /* Ajuste de tamaño para móviles */
+        height: auto;
+        max-width: 300px;
+    }
+
+    /* Promotion Cards */
+    .promotion-cards .card {
+        width: 80%; /* Las tarjetas ocupan más ancho en móvil */
+        max-width: 350px;
+    }
+
+    /* About Us Section */
+    .about-us-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Contact Form */
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .main-nav ul {
+        gap: 8px;
+    }
+    .social-icons a {
+        font-size: 2em;
+    }
+}
